@@ -13,4 +13,11 @@
         <PackageReference Include="SQLite" Version="3.13.0" />
         <PackageReference Include="Xamarin.Forms" Version="4.8.0.1821" />
     </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="Contacts.xaml.cs">
+        <DependentUpon>Contacts.xaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+    </ItemGroup>
 </Project>
