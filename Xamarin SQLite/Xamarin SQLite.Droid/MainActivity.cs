@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using Android.App;
 using Android.Content.PM;
 using Android.Runtime;
@@ -19,7 +20,13 @@ namespace Xamarin_SQLite.Droid
 
             base.OnCreate(savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-            LoadApplication(new App());
+
+            string fileName = "contacts.db3";
+            string folderPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
+            string completePath = Path.Combine(folderPath, fileName);
+            
+            
+            LoadApplication(new App(completePath));
         }
     }
 }

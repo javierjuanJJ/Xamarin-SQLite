@@ -8,10 +8,20 @@ namespace Xamarin_SQLite
 {
     public partial class App : Application
     {
+
+        public static string FILE_PATH;
+        
         public App()
         {
             InitializeComponent();
             
+            MainPage = new NavigationPage(new MainPage());
+        }
+        
+        public App(string filePath)
+        {
+            InitializeComponent();
+            FILE_PATH = filePath;
             MainPage = new NavigationPage(new MainPage());
         }
 

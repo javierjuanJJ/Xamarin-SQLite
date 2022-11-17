@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using Foundation;
 using UIKit;
@@ -22,7 +23,12 @@ namespace Xamarin_SQLite.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
-            LoadApplication(new App());
+            
+            string fileName = "contacts.db3";
+            string folderPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
+            string completePath = Path.Combine(folderPath, fileName);
+            
+            LoadApplication(new App(completePath));
 
             return base.FinishedLaunching(app, options);
         }
