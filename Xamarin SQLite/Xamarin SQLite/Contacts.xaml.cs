@@ -27,6 +27,7 @@ namespace Xamarin_SQLite
             using (SQLiteConnection conn = new SQLiteConnection(App.FILE_PATH))
             {
                 var contactsList = conn.Table<ContactModel>().ToList();
+                contactsListView.ItemsSource = contactsList;
             }
         }
 

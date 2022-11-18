@@ -7,5 +7,20 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="New" Clicked="MenuItem_OnClicked"></ToolbarItem>
     </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+        <ListView x:Name="contactsListView">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell 
+                        Text="{Binding Name1}"
+                        Detail="{Binding Email}"
+                        TextColor="Teal"
+                        DetailColor="Blue"
+                        ></TextCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
 
 </ContentPage>
